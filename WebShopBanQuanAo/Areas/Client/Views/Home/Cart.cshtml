@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Areas/Client/Views/Shared/_LayoutClient.cshtml";
+}
+
+<div class="container contact_container">
+    <div class="row">
+        <div class="col">
+
+            <!-- Breadcrumbs -->
+
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Cart</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div><p style="text-align:center; font-size: 16px; margin-top: 20px; color: orangered">Giỏ hàng</p></div>
+
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Hình ảnh</th>
+                    <th>Sản phẩm</th>
+                    <th>Thông tin</th>
+                    <th>Số lượng</th>
+                    <th>Giá bán</th>
+                    <th>Thành tiền</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><img src="images/desc_2.jpg" style="width: 50px; height: 50px;"></td>
+                    <td>Áo sơ mi</td>
+                    <td>L, Đỏ</td>
+                    <td>
+                        <button style="color: white; background-color: gray; width: 30px; height: 25px; margin-right: 10px; border: none; cursor: pointer;" onclick="decrease()">-</button> <span id="number">5</span>
+                        <button style="color: white; background-color: gray; border: none; width: 30px; height: 25px; margin-left: 10px; cursor: pointer;" onclick="increase()"> +</button>
+                    </td>;
+                    <td>180,000đ</td>
+                    <td>180,000đ</td>
+                    <td><div class="deletebtn" style="cursor: pointer; padding-left: 30px;"><i class="fa fa-remove"></i></div></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div><button data-toggle="modal" data-target="#myModal" style="color: white; background-color: orangered; float: right; margin-top: 20px; border: none; padding: 8px; border-radius: 5px; cursor: pointer;">Đặt hàng</button></div>
+</div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="tittelModal">
+                    <h5 style="text-align: center; margin-bottom: 20px;">Thông tin đơn hàng</h5>
+                </div>
+                <div class="container">
+                    <form action="">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="fname">Họ tên:</label>
+                            </div>
+                            <div class="col-6">
+                                <label for="fname">Nguyen Minh Anh</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="fname">Số điện thoại:</label>
+                            </div>
+                            <div class="col-6">
+                                <label for="fname">0789123123</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="fname">Địa chỉ:</label>
+                            </div>
+                            <div class="col-6">
+                                <label for="fname">Ha Noi</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="fname">Số lượng (sản phẩm):</label>
+                            </div>
+                            <div class="col-6" id="soluong">
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="fname">Thành tiền (đ):</label>
+                            </div>
+                            <div class="col-6" id="tongtien">
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="fname">Hình thức thanh toán:</label>
+                            </div>
+                            <div class="col-6">
+                                <label for="fname">Thanh toán khi nhận hàng</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <input type="submit" value="Đặt hàng" style="color: white; background-color: orangered; float: right; margin-top: 20px; border: none; padding: 8px; border-radius: 5px; cursor: pointer;">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

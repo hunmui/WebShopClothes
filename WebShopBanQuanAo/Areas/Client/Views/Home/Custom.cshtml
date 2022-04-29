@@ -1,0 +1,238 @@
+﻿
+@{
+    ViewBag.Title = "Custom";
+    Layout = "~/Areas/Client/Views/Shared/_LayoutClient.cshtml";
+}
+
+<div class="container contact_container">
+    <div class="row">
+        <div class="col">
+
+            <!-- Breadcrumbs -->
+
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Account</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div><p style="text-align:center; font-size: 16px; color: orangered">Thông tin khách hàng</p></div>
+    <div class="container">
+        <form action="">
+            <div class="row">
+                <div class="col-2">
+                    <label for="fname" style="font-weight: 600;">Họ tên:</label>
+                </div>
+                <div class="col-8">
+                    <label for="fname">Nguyen Minh Anh</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label for="fname" style="font-weight: 600;">Số điện thoại:</label>
+                </div>
+                <div class="col-8">
+                    <label for="fname">0785412345</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label for="fname" style="font-weight: 600;">Địa chỉ</label>
+                </div>
+                <div class="col-8">
+                    <label for="fname">Hà Nội</label>
+                </div>
+            </div>
+
+            <hr>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Họ và tên</th>
+                        <th>Số điện thoại</th>
+                        <th>Địa chỉ</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>0123456789</td>
+                        <td>Nguyễn Mia</td>
+                        <td>Ha Noi</td>
+                        <td>
+                            <a href="#" class="ChiTiet" data-toggle="modal" data-target="#myModalChange" style="margin:10px">Sửa</a>
+                            <a href="#" style="margin:10px">Xóa</a>
+                            <a href="#" style="margin:10px">Mặc định</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div><button data-toggle="modal" data-target="#myModalAdd" style="color: white; background-color: orangered; float: right; margin-top: 20px; border: none; padding: 8px; border-radius: 5px; cursor: pointer;">Thêm</button></div>
+        </form>
+    </div>
+    <div>
+        <p style="font-size: 16px; margin-top: 200px; color: orangered; text-align: center; ">Lịch sử mua hàng</p>
+    </div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã đơn hàng</th>
+                    <th>Ngày lập đơn</th>
+                    <th>Tổng tiền</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>1</td>
+                    <td>20/11/2021</td>
+                    <td>400,000đ</td>
+                    <td><a href="#" class="ChiTiet" data-toggle="modal" data-target="#myModal">Xem chi tiết</a></td>
+                </tr>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- Modal Chi tiết-->
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="tittelModal">
+                    <h5 style="text-align: center;">Thông tin đơn hàng</h5>
+                </div>
+                <div class="container">
+                    <table class="table" style="background-color: white; margin-top: 50px; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Thông tin</th>
+                                <th>Giá bán</th>
+                                <th>Số lượng</th>
+                                <th>Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> 1</td>
+                                <td> Áo sơ mi</td>
+                                <td> L,Đỏ</td>
+                                <td> 200,000đ</td>
+                                <td> 2</td>
+                                <td>400,000đ </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Thêm-->
+
+<div class="modal fade" id="myModalAdd" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="tittelModal">
+                    <h5 style="text-align: center;">Thêm thông tin nhận hàng</h5>
+                </div>
+                <div class="container" style="margin-top: 50px;">
+                    <div class="row ">
+                        <div class="col-3">
+                            <label for="fname" style="font-weight: 600;">Số điện thoại</label>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-3">
+                            <label for="fname" style="font-weight: 600;">Địa chỉ</label>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Thêm" style="color: white; background-color: orangered; float: right; margin-top: 20px; border: none; padding: 8px; border-radius: 5px; cursor: pointer;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Sửa-->
+
+<div class="modal fade" id="myModalChange" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="tittelModal">
+                    <h5 style="text-align: center;">Sửa thông tin nhận hàng</h5>
+                </div>
+                <div class="container" style="margin-top: 50px;">
+                    <div class="row ">
+                        <div class="col-3">
+                            <label for="fname" style="font-weight: 600; margin: 15px;">Tên</label>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" class="form-control" value="Nguyễn Minh Anh">
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-3">
+                            <label for="fname" style="font-weight: 600;">Số điện thoại</label>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" class="form-control" value="0789213241">
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-3">
+                            <label for="fname" style="font-weight: 600;">Địa chỉ</label>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" class="form-control" value="Ha Noi">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <input type="submit" value="Lưu" style="color: white; background-color: orangered; float: right; margin-top: 20px; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
