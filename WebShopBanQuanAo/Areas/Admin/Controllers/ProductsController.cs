@@ -24,6 +24,6 @@ namespace WebShopBanQuanAo.Areas.Admin.Controllers
         public ActionResult GridProduct()
         {
             return View();
-        }
+        }        
     }
 }
